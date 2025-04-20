@@ -7,7 +7,7 @@ const int MAP_WIDTH = 120;
 const int MAP_HEIGHT = 20;  
 
 void displayMap(const vector<vector<char> >& map) {
-    cout << "µØÍ¼£º" << endl;
+    cout << "åœ°å›¾ï¼š" << endl;
     for (int i = 0; i < MAP_HEIGHT; ++i) {
         for (int j = 0; j < MAP_WIDTH; ++j) {
             cout << map[i][j];
@@ -28,16 +28,15 @@ void setfloor(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = '-'; 
     } else {
-        cout << "×ø±ê³¬³öµØÍ¼·¶Î§£¡" << endl;
+        cout << "è¶…å‡ºåœ°å›¾èŒƒå›´" << endl;
     }
 }
-
 
 void setv(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = 'v'; 
     } else {
-        cout << "×ø±ê³¬³öµØÍ¼·¶Î§£¡" << endl;
+        cout << "è¶…å‡ºåœ°å›¾èŒƒå›´" << endl;
     }
 }
 
@@ -45,7 +44,7 @@ void setwall(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = '|'; 
     } else {
-        cout << "×ø±ê³¬³öµØÍ¼·¶Î§£¡" << endl;
+        cout << "è¶…å‡ºåœ°å›¾èŒƒå›´" << endl;
     }
 }
 
@@ -53,7 +52,7 @@ void A(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = '/'; 
     } else {
-        cout << "×ø±ê³¬³öµØÍ¼·¶Î§£¡" << endl;
+        cout << "è¶…å‡ºåœ°å›¾èŒƒå›´" << endl;
     }
 }
 
@@ -61,7 +60,7 @@ void B(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = '\\'; 
     } else {
-        cout << "×ø±ê³¬³öµØÍ¼·¶Î§£¡" << endl;
+        cout << "è¶…å‡ºåœ°å›¾èŒƒå›´" << endl;
     }
 }
 
@@ -69,15 +68,16 @@ void C(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = '['; 
     } else {
-        cout << "×ø±ê³¬³öµØÍ¼·¶Î§£¡" << endl;
+        cout << "è¶…å‡ºåœ°å›¾èŒƒå›´" << endl;
     }
 }
 
 void D(vector<vector<char> >& map, int x, int y) {
+void D(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = ']'; 
     } else {
-        cout << "×ø±ê³¬³öµØÍ¼·¶Î§£¡" << endl;
+        cout << "ï¿½ï¿½ï¿½ê³¬ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Î§ï¿½ï¿½" << endl;
     }
 }
 
@@ -85,7 +85,7 @@ void E(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = '$'; 
     } else {
-        cout << "×ø±ê³¬³öµØÍ¼·¶Î§£¡" << endl;
+        cout << "ï¿½ï¿½ï¿½ê³¬ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Î§ï¿½ï¿½" << endl;
     }
 }
 
