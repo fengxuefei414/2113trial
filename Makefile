@@ -2,7 +2,7 @@
 CXX = g++
 
 # 编译选项
-CXXFLAGS = -Wall -g
+CXXFLAGS = -Wall -g -O2
 
 # 目标文件
 TARGET = game
@@ -18,12 +18,12 @@ all: $(TARGET)
 
 # 链接目标
 $(TARGET): $(OBJS)
-    $(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # 编译规则
 %.o: %.cpp
-    $(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # 清理
 clean:
-    rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET)
