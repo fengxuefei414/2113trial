@@ -49,44 +49,39 @@ char UserControl::getKeyPress() {
 }
 
 // 处理用户输入
-void UserControl::handleInput(int &playerX, int &playerY, bool &isJumping, float &playerVelocityX, float &playerVelocityY, const float JUMP_FORCE, int SCREEN_WIDTH) {
+void UserControl::handleInput(int &playerX, int &playerY, bool &isJumping, float &playerVelocityY, float &playerVelocityX, const float JUMP_FORCE, int SCREEN_WIDTH) {
     char key = getKeyPress();
-
-    leftPressed = false;
-    rightPressed = false;
-
+    
     // 处理按键输入
-    if (key == 'a' || key == 'A') {
-        if (playerX > 0) {
-            playerX--; // 向左移动
-        }
-    } else if (key == 'd' || key == 'D') {
-        if (playerX < SCREEN_WIDTH - 3) {
-            playerX++; // 向右移动
-        }
-    } else if ((key == 'w' || key == 'W') && !isJumping) {
-        isJumping = true;
-        playerVelocityY = JUMP_FORCE; // 开始跳跃
-    } else if (key == 'q' || key == 'Q') {
-        // 退出逻辑可由主程序处理
-    }
-
-    const float acceleration = 0.5f;  // 加速度值
-    const float maxSpeed = 3.0f;      // 最大移动速度
-    const float friction = 0.85f;     // 摩擦系数（减速效果）
-
-    // 根据按键状态更新水平速度
-    if (leftPressed) {
-        playerVelocityX -= acceleration;    // 向左加速
-        playerVelocityX = std::max(playerVelocityX, -maxSpeed); // 限制最大速度
-    } else if (rightPressed) {
-        playerVelocityX += acceleration;    // 向右加速
-        playerVelocityX = std::min(playerVelocityX, maxSpeed);
-    } else {
-        // 没有按键时应用摩擦力
-        playerVelocityX *= friction;
-        if (std::abs(playerVelocityX) < 0.1f) {
-            playerVelocityX = 0.0f;  // 速度过小时归零
-        }
+    switch (key) {
+        case 'a': case 'A':
+            if (playerX > 0 || playerX < SCREEN_WIDTH - 1) {
+                if (!isJumping) {
+                    playerX--; // 在地面上直接向左移动一格
+                } else {
+                    playerVelocityX = -1.5f; // 在跳跃时设置较小的向左水平速度
+                }
+            }
+            break;
+        case 'd': case 'D':
+            if (playerX < SCREEN_WIDTH - 1) {
+                if (!isJumping) {
+                    playerX++; // 在地面上直接向右移动一格
+                } else {
+                    playerVelocityX = 1.5f; // 在跳跃时设置向右的水平速度
+                }
+            }
+            break;
+        case 'w': case 'W':
+            if (!isJumping) {
+                isJumping = true;
+                playerVelocityY = JUMP_FORCE; // 开始跳跃
+            }
+            break;
+        case 'q': case 'Q':
+            // 退出逻辑可由主程序处理
+            break;
+        default:
+            break;
     }
 }

@@ -1,76 +1,7 @@
-#include "map.h"
+#include "map1117.h"
+#include "map_utils.h"
 
-// 定义地图常量
-const int MAP_WIDTH = 120;
-const int MAP_HEIGHT = 20;
-
-void displayMap(const vector<vector<char> >& map) {
-    cout << "游戏地图：" << endl;
-    for (int i = 0; i < MAP_HEIGHT; ++i) {
-        for (int j = 0; j < MAP_WIDTH; ++j) {
-            cout << map[i][j];
-        }
-        cout << endl;
-    }
-}
-
-void initializeMap(vector<vector<char> >& map) {
-    for (int i = 0; i < MAP_HEIGHT; ++i) {
-        for (int j = 0; j < MAP_WIDTH; ++j) {
-            map[i][j] = ' ';
-        }
-    }
-}
-
-void setfloor(vector<vector<char> >& map, int x, int y) {
-    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
-        map[y][x] = '-';
-    }
-}
-
-void setv(vector<vector<char> >& map, int x, int y) {
-    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
-        map[y][x] = 'v';
-    }
-}
-
-void setwall(vector<vector<char> >& map, int x, int y) {
-    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
-        map[y][x] = '|';
-    }
-}
-
-void A(vector<vector<char> >& map, int x, int y) {
-    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
-        map[y][x] = '/';
-    }
-}
-
-void B(vector<vector<char> >& map, int x, int y) {
-    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
-        map[y][x] = '\\';
-    }
-}
-
-void C(vector<vector<char> >& map, int x, int y) {
-    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
-        map[y][x] = '[';
-    }
-}
-
-void D(vector<vector<char> >& map, int x, int y) {
-    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
-        map[y][x] = ']';
-    }
-}
-
-void E(vector<vector<char> >& map, int x, int y) {
-    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
-        map[y][x] = '$';
-    }
-}
-
-void generateMap(vector<vector<char> >& map) {
+void generateMap1117(vector<vector<char> >& map) {
     initializeMap(map);
     int x, y;
     
