@@ -5,7 +5,7 @@
 #include <ctime>
 
 // DUE相关常量
-const int DUE_SPEED = 2;            // DUE推进速度（秒）
+const int DUE_SPEED = 1;            // DUE推进速度（秒）
 const int DUE_WIDTH = 1;            // 每次推进的宽度
 
 // DUE相关变量

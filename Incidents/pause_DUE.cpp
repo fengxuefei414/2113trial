@@ -25,9 +25,3 @@ void updateDUEPause() {
 bool isDUECurrentlyPaused() {
     return isDUEPaused;
 }
-
-// 减少关卡时间
-void reduceLevelTime(int& time) {
-    time -= 5;  // 减少5秒
-    if (time < 0) time = 0;  // 确保时间不会变成负数
-}

@@ -24,6 +24,7 @@ void D(vector<vector<char> >& map, int x, int y);
 void E(vector<vector<char> >& map, int x, int y);
 void F(vector<vector<char> >& map, int x, int y);
 void G(vector<vector<char> >& map, int x, int y);
+void side(vector<vector<char> >& map, int x, int y);
 void setleftv(vector<vector<char> >& map, int x, int y);
 void setrightv(vector<vector<char> >& map, int x, int y);
 

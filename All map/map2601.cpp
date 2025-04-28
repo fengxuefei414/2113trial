@@ -14,20 +14,28 @@ void generateMap2601(vector<vector<char> >& map) {
     // 设置一些障碍物和行距示例
     // 函数中的坐标为（x,y） 
    
+    for (int x = 0; x < 120; x++){       //设置边界
+        setfloor(map,x,0);
+    }
+
+    for (int x = 0; x < 120; x++){
+        setfloor(map,x,19);
+    }
+
+    for(x=4;x<=4;x++){
+		for(y=2;y<=18;y++){
+			side(map,x,y);
+		}
+	}
+	for(x=115;x<=115;x++){
+		for(y=2;y<=18;y++){
+			side(map,x,y);
+		}
+	}
     for (int k = 13 + start_x; k <= end_x; k++){ // 放置地刺v和天花板刺v
         setv(map,k,end_y); 
     }
 
-    setv(map,71+5,start_y);
-    setv(map,81+5,start_y);
-    setv(map,69+5,start_y + 1);
-    setv(map,73+5,start_y + 1);
-    setv(map,79+5,start_y + 1);
-    setv(map,83+5,start_y + 1);
-    setv(map,68+5,start_y + 2);
-    setv(map,74+5,start_y + 2);
-    setv(map,78+5,start_y + 2);
-    setv(map,84+5,start_y + 2);	// 地刺和天花板刺放置完毕
 
     for (int x = start_x; x <= end_x; x++){ //设置地板和天花板
         if (map[start_y][x] == ' '){
@@ -95,10 +103,10 @@ void generateMap2601(vector<vector<char> >& map) {
         for (int x = 9+5; x <= 11+5; x++){
             setfloor(map,x,y);
         }
-        for (int x = 17+5; x <= 19+5; x++){
+        for (int x = 17+5; x <= 20+5; x++){
             setfloor(map,x,y);
         }
-        for (int x = 23+5; x <= 25+5; x++){
+        for (int x = 23+5; x <= 26+5; x++){
             setfloor(map,x,y);
         }
         for (int x = 29+5; x <= 31+5; x++){
@@ -107,7 +115,7 @@ void generateMap2601(vector<vector<char> >& map) {
         for (int x = 41+5; x <= 48+5; x++){
             setfloor(map,x,y);
         }
-        for (int x = 53+5; x <= 55+5; x++){
+        for (int x = 53+5; x <= 56+5; x++){
             setfloor(map,x,y);
         }
     }
@@ -169,24 +177,22 @@ void generateMap2601(vector<vector<char> >& map) {
 
     //设置墙刺
 
-    setleftv(map,35+5,8);
-    setrightv(map,35+5,9);
+    A(map,50+5,11);
+    B(map,51+5,11);
 
-    setleftv(map,60+5,8);
-    setrightv(map,60+5,7);
+    A(map,49+5,12);
+    B(map,52+5,12);
 
-    setleftv(map,63+5,9);
-    setrightv(map,63+5,10);
-
-    setleftv(map,50+5,11);
-    setrightv(map,51+5,11);
-
-    setleftv(map,49+5,12);
-    setrightv(map,52+5,12);
-
+    //设置随机事件
+    E(map, 24+5, 11);
+    E(map, 34+5, 5);
+    E(map, 45+5, 11);
+    for (int x = 13+5; x <= 114; x += 3){
+        map[14][x] = '@';  // 替换船的表情符号
+    }
     //设置门
 
-    A(map,105,5);
-    B(map,107,5);
+    C(map,105,5);
+    D(map,107,5);
     
 }

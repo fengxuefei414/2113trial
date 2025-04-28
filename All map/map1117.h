@@ -21,6 +21,7 @@ void B(vector<vector<char> >& map, int x, int y);
 void C(vector<vector<char> >& map, int x, int y);
 void D(vector<vector<char> >& map, int x, int y);
 void E(vector<vector<char> >& map, int x, int y);
+void side(vector<vector<char> >& map, int x, int y);
 void generateMap1117(vector<vector<char> >& map);
 
 #endif 

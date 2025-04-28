@@ -15,6 +15,18 @@ void generateMap1016(vector<vector<char> >& map) {
 		}
     }
     
+    for(x=4;x<=4;x++){
+		for(y=2;y<=18;y++){
+			side(map,x,y);
+		}
+	}
+	
+	for(x=115;x<=115;x++){
+		for(y=2;y<=18;y++){
+			side(map,x,y);
+		}
+	}
+    
     for(y=6;y<=6;y++){
     	for(x=17;x<21;x++){
 			setfloor(map,x,y);
@@ -58,7 +70,7 @@ void generateMap1016(vector<vector<char> >& map) {
 		for(x=5;x<11;x++){
 			setfloor(map,x,y);
 		}
-		for(x=29;x<32;x++){
+		for(x=27;x<33;x++){
 			setfloor(map,x,y);
 		}
 		for(x=41;x<45;x++){
@@ -82,7 +94,7 @@ void generateMap1016(vector<vector<char> >& map) {
 		for(x=34;x<39;x++){
 			setfloor(map,x,y);
 		}
-		for(x=104;x<107;x++){
+		for(x=103;x<107;x++){
 			setfloor(map,x,y);
 		}
     	
@@ -99,20 +111,20 @@ void generateMap1016(vector<vector<char> >& map) {
 	}
 	
 	for(y=14;y<=14;y++){
-		for(x=16;x<20;x++){
+		for(x=16;x<21;x++){
 			setfloor(map,x,y);
 		}
-		for(x=84;x<87;x++){
+		for(x=83;x<87;x++){
 			setfloor(map,x,y);
 		}
-		for(x=98;x<101;x++){
+		for(x=97;x<101;x++){
 			setfloor(map,x,y);
 		}
 			
 	}
 	
 	for(y=16;y<=16;y++){
-		for(x=23;x<28;x++){
+		for(x=22;x<28;x++){
 			setfloor(map,x,y);
 		}
 		for(x=32;x<37;x++){
@@ -121,7 +133,7 @@ void generateMap1016(vector<vector<char> >& map) {
 		for(x=41;x<46;x++){
 			setfloor(map,x,y);
 		}
-		for(x=51;x<56;x++){
+		for(x=51;x<60;x++){
 			setfloor(map,x,y);
 		}
 		for(x=90;x<95;x++){
@@ -135,20 +147,20 @@ void generateMap1016(vector<vector<char> >& map) {
 		}
 	}
 	
-	for(x=5;x<=5;x++){
-		for(y=5;y<=10;y++){
-			setwall(map,x,y);
-		}
-	}
-	
 	for(x=76;x<=76;x++){
 		for(y=7;y<=9;y++){
 			setwall(map,x,y);
 		}
 	}
 	
+	for(x=60;x<=60;x++){
+		for(y=14;y<=16;y++){
+			setwall(map,x,y);
+		}
+	}
+	
 	for(x=36;x<=36;x++){
-		for(y=7;y<=10;y++){
+		for(y=7;y<=9;y++){
 			setv(map,x,y);
 		}
 	}
@@ -172,5 +184,7 @@ void generateMap1016(vector<vector<char> >& map) {
 	E(map,55,8);
 	E(map,55,10);
 	E(map,55,12);
+	E(map,30,14);
+	E(map,92,15);
 }
 

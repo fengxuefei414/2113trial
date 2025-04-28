@@ -59,7 +59,7 @@ void UserControl::handleInput(int &playerX, int &playerY, bool &isJumping, float
                 if (!isJumping) {
                     playerX--; // 在地面上直接向左移动一格
                 } else {
-                    playerVelocityX = -1.5f; // 在跳跃时设置较小的向左水平速度
+                    playerVelocityX = -1.0f; // 在跳跃时设置较小的向左水平速度
                 }
             }
             break;
@@ -68,7 +68,7 @@ void UserControl::handleInput(int &playerX, int &playerY, bool &isJumping, float
                 if (!isJumping) {
                     playerX++; // 在地面上直接向右移动一格
                 } else {
-                    playerVelocityX = 1.5f; // 在跳跃时设置向右的水平速度
+                    playerVelocityX = 1.0f; // 在跳跃时设置向右的水平速度
                 }
             }
             break;

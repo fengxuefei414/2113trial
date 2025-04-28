@@ -82,6 +82,14 @@ void E(vector<vector<char> >& map, int x, int y) {
     }
 }
 
+void side(vector<vector<char> >& map, int x, int y) {
+    if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
+        map[y][x] = '#';
+    } else {
+        cout << "坐标超出地图范围！" << endl;
+    }
+}
+
 void setleftv(vector<vector<char> >& map, int x, int y) {
     if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
         map[y][x] = '<';

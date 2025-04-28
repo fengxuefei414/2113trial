@@ -7,7 +7,7 @@
 #include "DUE.h"
 #include "All map/map1001.h"
 #include "All map/map1117.h"
-#include "All map/map1013.h"
+#include "All map/map1000.h"
 #include "All map/map1016.h"
 #include "All map/map2014.h"
 #include "All map/map2601.h"
@@ -23,8 +23,8 @@ struct IncidentRecord {
 };
 
 // 游戏常量
-const float GRAVITY = 0.2f;        // 减小重力
-const float JUMP_FORCE = -0.8f;     // 减小跳跃力度
+const float GRAVITY = 0.3f;        // 减小重力
+const float JUMP_FORCE = -1.0f;     // 减小跳跃力度
 const float TERMINAL_FPS = 30.0f;   // 目标帧率
 
 // 当前关卡
@@ -47,11 +47,11 @@ struct SpawnPoint {
 
 // 每个关卡的出生点（暂时都使用相同的出生点）
 const SpawnPoint LEVEL_SPAWNS[] = {
-    {5, 15},    // 第1关出生点
-    {5, 15},    // 第2关出生点
-    {5, 15},    // 第3关出生点
-    {5, 15},    // 第4关出生点
-    {5, 15},    // 第5关出生点
+    {5, 13},    // 第1关出生点
+    {5, 13},    // 第2关出生点
+    {5, 13},    // 第3关出生点
+    {5, 9},    // 第4关出生点
+    {5, 5},    // 第5关出生点
     {5, 15}     // 第6关出生点
 };
 
@@ -77,7 +77,7 @@ void loadLevel(vector<vector<char> >& map, int level) {
             generateMap1117(map);
             break;
         case 3:
-            generateMap1013(map);
+            generateMap1000(map);
             break;
         case 4:
             generateMap1016(map);
@@ -110,7 +110,7 @@ bool isPlatform(const vector<vector<char> >& map, int x, int y) {
         return false;
     }
     char c = map[y][x];
-    return (c == '-' || c == 'v' || c == '[' || c == ']' || c == '|' || c == '\\' || c == '/');
+    return (c == '-' || c == 'v' || c == '[' || c == ']' || c == '|' || c == '\\' || c == '/' );
 }
 
 // 检查是否碰到关卡切换点
@@ -305,7 +305,7 @@ void displayGame(const vector<vector<char> >& map, const Player& player) {
     switch(currentLevel) {
         case 1: mapName = "map1001"; break;
         case 2: mapName = "map1117"; break;
-        case 3: mapName = "map1013"; break;
+        case 3: mapName = "map1000"; break;
         case 4: mapName = "map1016"; break;
         case 5: mapName = "map2014"; break;
         case 6: mapName = "map2601"; break;
@@ -343,7 +343,7 @@ void gameLoop() {
         .velocityX = 0.0f,
         .velocityY = 0.0f,
         .isJumping = false,
-        .symbol = '@'
+        .symbol = 'H'
     };
     
     // 初始化用户控制
